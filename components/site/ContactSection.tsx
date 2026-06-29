@@ -72,7 +72,7 @@ export default function ContactSection({ site }: { site: SiteInfo }) {
           <p className="mb-6 text-[14.5px] text-ink-soft">
             Formu doldurduğunuzda mesajınız bana iletilecektir.
           </p>
-          <ContactForm targetEmail={site.email} />
+          <ContactForm />
         </div>
       </div>
     </section>

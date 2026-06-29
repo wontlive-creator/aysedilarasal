@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Logo from "./Logo";
 
 const LINKS = [
   { href: "#hakkinda", label: "Hakkında" },
@@ -17,10 +18,13 @@ export default function SiteNav({ adSoyad }: { adSoyad: string }) {
   return (
     <nav className="sticky top-0 z-50 border-b border-line bg-cream/90 backdrop-blur-sm">
       <div className="mx-auto flex h-[72px] max-w-[1080px] items-center justify-between px-7">
-        <span className="font-[family-name:var(--font-display)] text-xl font-semibold text-burgundy-deep">
-          {adSoyad}
-          <span className="text-terra">.</span>
-        </span>
+        <a href="#top" className="flex items-center gap-2.5">
+          <Logo />
+          <span className="font-[family-name:var(--font-display)] text-xl font-semibold text-burgundy-deep">
+            {adSoyad}
+            <span className="text-terra">.</span>
+          </span>
+        </a>
 
         <ul className="hidden gap-7 md:flex">
           {LINKS.map((link) => (

@@ -82,7 +82,32 @@ node -e "console.log(require('bcryptjs').hashSync('SIFRENIZ', 10))"
 
 ---
 
-## 5) Deploy
+## 5) İletişim Formu için E-posta Kurulumu (Resend)
+
+Sitedeki "Mesaj Gönder" formunun gerçekten e-posta göndermesi için:
+
+1. [resend.com](https://resend.com) adresinde ücretsiz bir hesap açın (kredi kartı istemez, ayda 3000 e-posta ücretsiz)
+2. Dashboard'da **API Keys** → **Create API Key** ile bir anahtar oluşturun
+3. Vercel projenizde **Settings → Environment Variables** kısmına ekleyin:
+
+   | Değişken | Değer |
+   |---|---|
+   | `RESEND_API_KEY` | Resend'den aldığınız anahtar (örn. `re_xxxxxxxx`) |
+
+4. Bu adımdan sonra Redeploy yapın
+
+> Not: Varsayılan olarak e-postalar Resend'in test adresi olan
+> `onboarding@resend.dev`'den gönderilir — bu, kurulum yapmadan hemen
+> çalışır ama gönderen adres olarak "resend.dev" görünür. Kendi alan
+> adınızdan (örn. `site@aysedilarasal.com.tr`) göndermek isterseniz,
+> Resend Dashboard'da **Domains** kısmından alan adınızı doğrulamanız
+> gerekir (birkaç DNS kaydı eklemeniz istenir); doğrulandıktan sonra
+> `lib/actions/contact-actions.ts` dosyasındaki `from` satırını
+> güncelleyebilirsiniz.
+
+---
+
+## 6) Deploy
 
 Ortam değişkenlerini ekledikten sonra Vercel'de **Deploy** butonuna basın.
 Build bitince size bir `https://...vercel.app` adresi verilir.
@@ -97,7 +122,7 @@ yayılması birkaç saat sürebilir.
 
 ---
 
-## 6) İlk İçeriği Yükleme
+## 7) İlk İçeriği Yükleme
 
 1. `https://siteniz.com/admin/login` adresine gidin
 2. Kullanıcı adı/şifre ile giriş yapın

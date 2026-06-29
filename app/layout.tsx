@@ -18,6 +18,13 @@ export const metadata: Metadata = {
   title: "Ayşe Dilara Sal | Psikolojik Danışman (PDR)",
   description:
     "Psikolojik Danışma ve Rehberlik alanında akademik çalışmalar, tezler, makaleler ve danışmanlık hizmetleri.",
+  icons: {
+    icon: [{ url: "/icon-512.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  other: {
+    "google-adsense-account": "ca-pub-6368006900269736",
+  },
 };
 
 export default function RootLayout({
