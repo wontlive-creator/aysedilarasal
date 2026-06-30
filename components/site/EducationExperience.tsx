@@ -1,4 +1,41 @@
+import Image from "next/image";
 import type { EgitimItem, DeneyimItem } from "@/lib/types";
+
+/**
+ * Okul ismine göre bilinen üniversite logosunu bulur. İsimde geçen
+ * anahtar kelimeye göre eşleştirme yapar, böylece "Gazi Üniversitesi"
+ * veya kısaca "Gazi" yazılsa da logo bulunur. Eşleşme yoksa null döner
+ * ve kart logosuz gösterilir (bozuk görsel veya placeholder yerine).
+ */
+function getSchoolLogo(okul: string): { src: string; alt: string } | null {
+  const normalized = okul.toLocaleLowerCase("tr-TR");
+  if (normalized.includes("gazi")) {
+    return { src: "/logos/gazi.png", alt: "Gazi Üniversitesi" };
+  }
+  if (normalized.includes("hacettepe")) {
+    return { src: "/logos/hacettepe.png", alt: "Hacettepe Üniversitesi" };
+  }
+  if (normalized.includes("anadolu")) {
+    return { src: "/logos/anadolu.png", alt: "Anadolu Üniversitesi" };
+  }
+  return null;
+}
+
+function SchoolLogo({ okul }: { okul: string }) {
+  const logo = getSchoolLogo(okul);
+  if (!logo) return null;
+  return (
+    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-line bg-white p-1.5">
+      <Image
+        src={logo.src}
+        alt={logo.alt}
+        width={48}
+        height={48}
+        className="h-full w-full object-contain"
+      />
+    </div>
+  );
+}
 
 function EmptyState({ text }: { text: string }) {
   return (
@@ -64,17 +101,22 @@ export default function EducationExperience({
                           </span>
                         )}
                       </div>
-                      <h3 className="text-[19px] text-burgundy-deep font-[family-name:var(--font-display)]">
-                        {e.derece}
-                      </h3>
-                      <p className="mb-2 text-[15px] font-medium text-ink-soft">
-                        {e.bolum} &middot; {e.okul}
-                      </p>
-                      {e.not_ortalamasi && (
-                        <p className="text-[15px] text-ink-soft">
-                          Not Ortalaması: {e.not_ortalamasi}
-                        </p>
-                      )}
+                      <div className="flex items-start gap-3.5">
+                        <SchoolLogo okul={e.okul} />
+                        <div className="min-w-0">
+                          <h3 className="text-[19px] text-burgundy-deep font-[family-name:var(--font-display)]">
+                            {e.derece}
+                          </h3>
+                          <p className="mb-2 text-[15px] font-medium text-ink-soft">
+                            {e.bolum} &middot; {e.okul}
+                          </p>
+                          {e.not_ortalamasi && (
+                            <p className="text-[15px] text-ink-soft">
+                              Not Ortalaması: {e.not_ortalamasi}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}

@@ -21,10 +21,10 @@ export default function ContactSection({ site }: { site: SiteInfo }) {
       <div className="mx-auto grid max-w-[1080px] grid-cols-1 gap-10 px-7 md:grid-cols-2">
         <div className="rounded-3xl bg-burgundy p-10 text-white">
           <span className="text-[13px] font-semibold uppercase tracking-[0.12em] text-terra-soft">
-            İletişim
+            Bana Ulaşın
           </span>
           <h2 className="mt-2.5 font-[family-name:var(--font-display)] text-[26px] font-semibold text-white">
-            Birlikte konuşalım.
+            Görüşme Talebi
           </h2>
           <p className="mt-3.5 text-white/85">
             Görüşme talebiniz veya sorularınız için bana ulaşabilirsiniz.
@@ -67,10 +67,10 @@ export default function ContactSection({ site }: { site: SiteInfo }) {
 
         <div className="rounded-3xl border border-line bg-white p-10">
           <h2 className="mb-1.5 text-xl text-burgundy-deep font-[family-name:var(--font-display)]">
-            Mesaj Gönder
+            Sorularınız için bana yazabilirsiniz
           </h2>
           <p className="mb-6 text-[14.5px] text-ink-soft">
-            Formu doldurduğunuzda mesajınız bana iletilecektir.
+            Mesajınız bana ulaştığında sizinle iletişime geçeceğim.
           </p>
           <ContactForm />
         </div>
