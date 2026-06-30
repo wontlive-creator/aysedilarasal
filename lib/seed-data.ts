@@ -19,7 +19,7 @@ export const SEED_SITE: SiteInfo = {
     "Psikolojik Danışma ve Rehberlik yolculuğuma Gazi Üniversitesi'nde başladım ve bu tutkumu Hacettepe Üniversitesi'nde devam ettiğim Doktora programı ile en üst akademik seviyeye taşımayı hedefliyorum. Eğitim sürecim boyunca sadece teorik bilgilerle yetinmeyip; insanın duygu dünyasını anlamaya, sağlıklı iletişim kanalları kurmaya ve bireysel farkındalığı yönetmeye odaklandım.\nMesleğimi; teknik bir becerinin ötesinde, samimiyet ve güven üzerine kurulu bir yol arkadaşlığı olarak görüyorum. Lisans ve lisansüstü eğitimlerimde sağladığım güçlü altyapı ile bireylerin hayatlarına dokunmayı, onlara kendilerini tanıma yolculuklarında güvenli bir alan açmayı görev ediniyorum. Gelişime olan inancım ve akademik donanımımla, PDR alanında iz bırakan çalışmalar yapmaya ve danışanlarımın gelişim süreçlerine katkı sağlamaya devam ediyorum.",
   kariyer_hedefi:
     "Lisans, yüksek lisans ve doktora eğitimlerim boyunca başarıyla tamamladığım mesleki derslerim ve kişisel özelliklerim doğrultusunda; insan ilişkileri, iletişim, duygu ve düşünceleri fark ederek yönetme ilgi ve becerimin yanı sıra eğitimimde sağladığım alt yapı ve deneyimlerim ile kariyer danışmanlığı alanında ilerlemeyi planlamaktayım.",
-  email: "pddilarasal@gmail.com",
+  email: "aysedilarasal@gmail.com",
   telefon: "",
   sosyal: {
     wordpress: "https://dilarasal.wordpress.com/",

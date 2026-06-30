@@ -46,11 +46,9 @@ export async function sendContactMessageAction(
   try {
     const resend = new Resend(apiKey);
     const { error } = await resend.emails.send({
-      // Resend'de özel alan adı doğrulamadan önce yalnızca bu adresten
-      // gönderim yapılabilir. Alan adınızı Resend'de doğruladıktan sonra
-      // bunu örn. "Web Sitesi <site@aysedilarasal.com.tr>" olarak
-      // güncelleyebilirsiniz.
-      from: "Web Sitesi <onboarding@resend.dev>",
+      // Alan adınız Resend'de doğrulandı, artık kendi alan adınızdan
+      // gönderim yapılabiliyor.
+      from: "Web Sitesi <site@aysedilarasal.com.tr>",
       to: site.email,
       replyTo: eposta,
       subject: `Web sitesi mesajı — ${ad}`,
