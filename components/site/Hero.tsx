@@ -1,8 +1,7 @@
+import Image from "next/image";
 import type { SiteInfo } from "@/lib/types";
 
 export default function Hero({ site }: { site: SiteInfo }) {
-  const ilkHarf = site.ad_soyad?.charAt(0) ?? "A";
-
   return (
     <header className="relative overflow-hidden py-24 pb-28 md:pb-32">
       <div className="mx-auto grid max-w-[1080px] grid-cols-1 items-center gap-12 px-7 md:grid-cols-[1.1fr_0.9fr]">
@@ -36,8 +35,9 @@ export default function Hero({ site }: { site: SiteInfo }) {
         </div>
 
         <div className="relative order-first flex justify-center md:order-none">
+          {/* Yolculuk imza çizgisi — arkaplanda dekoratif */}
           <svg
-            className="pointer-events-none absolute -right-12 -top-10 w-44 opacity-50"
+            className="pointer-events-none absolute -right-8 -top-8 w-36 opacity-40"
             viewBox="0 0 220 220"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,15 +53,17 @@ export default function Hero({ site }: { site: SiteInfo }) {
             <circle cx="200" cy="20" r="5" fill="#7A2E2E" />
           </svg>
 
-          <div className="relative flex aspect-[4/5] w-full max-w-[280px] items-end overflow-hidden rounded-[28px] bg-gradient-to-br from-terra-soft to-burgundy p-6 shadow-[0_10px_30px_-12px_rgba(58,46,42,0.25)] md:max-w-[360px]">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.25),transparent_55%)]" />
-            <span className="absolute -top-3 left-3 font-[family-name:var(--font-display)] text-[140px] leading-none text-white/20">
-              {ilkHarf}
-            </span>
-            <span className="relative z-10 rounded-full bg-ink/30 px-4 py-2 text-[15px] font-semibold text-white backdrop-blur-sm">
-              PDR &middot; Doktora Adayı
-            </span>
-          </div>
+          {/* Hafif bordo glow — kartın arkasında derinlik */}
+          <div className="absolute inset-4 -z-10 rounded-[32px] bg-burgundy/10 blur-2xl" />
+
+          <Image
+            src="/logo/kimlik-kart.png"
+            alt="Ayşe Dilara Sal — PDR Doktorant Kimlik Kartı"
+            width={600}
+            height={894}
+            className="relative z-10 w-full max-w-[280px] rounded-[20px] shadow-[0_20px_60px_-16px_rgba(84,32,31,0.35)] md:max-w-[300px]"
+            priority
+          />
         </div>
       </div>
     </header>
